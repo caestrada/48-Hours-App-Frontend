@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 const UltiLogo = props => {
   return (
-    <div><h1>Uno</h1></div>
+    <img
+      style={{width: 200}}
+      src={require('../../images/UltiPro_Logo_Process.png')} 
+    />
   );
 };
 

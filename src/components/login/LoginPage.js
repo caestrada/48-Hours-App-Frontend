@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import UltiLogo from '../common/UltiLogo';
+import Label from '../common/Label';
+import TextInput from "../common/TextInput";
+import PasswordInput from "../common/PasswordInput";
+import LoginForm from "./LoginForm";
 
-class componentName extends Component {
+
+class LoginPage extends Component {
   state = {
     username: '',
     password: '',
@@ -16,30 +21,24 @@ class componentName extends Component {
     event.preventDefault();
   }
 
+  onSubmit = (user) => {
+    console.log(user);
+  }
+
   render() {
     return (
-      <form onSubmit={this.submit}>
+      <div>
         <UltiLogo />
-        <label>
-          Username: 
-          <input 
-            type="text" 
-            name="username" 
-            value={this.state.username} 
-            onChange={this.handleChange} />
-        </label>
-        <label>
-          Password:
-          <input 
-            type="password" 
-            name="password"
-            value={this.state.password} 
-            onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+        <LoginForm onSubmit={this.onSubmit} />
+      </div>
     );
   }
 }
 
-export default componentName;
+PasswordInput.defaultProps = {
+  maxLength: 50,
+  showVisibilityToggle: false,
+  label: 'Password',
+}
+
+export default LoginPage;
