@@ -19,10 +19,11 @@ class LoginForm extends Component {
     this.setState({user});
   }
 
-  onSubmit = () => {
+  onFormSubmit = (event) => {
     const {user} = this.state;
     this.props.onSubmit(user);
     this.setState({submitted: true});
+    event.preventDefault();
   }
 
   render() {
@@ -45,7 +46,7 @@ class LoginForm extends Component {
           showVisibilityToggle
         />
 
-        <input type="submit" value="Submit" onClick={this.onSubmit} />
+        <input type="submit" value="Submit" onClick={this.onFormSubmit} />
       </form>
     );
   }
