@@ -5,6 +5,7 @@ import Label from '../common/Label';
 import TextInput from "../common/TextInput";
 import PasswordInput from "../common/PasswordInput";
 import LoginForm from "./LoginForm";
+import { Link } from 'react-router-dom';
 
 
 class LoginPage extends Component {
@@ -18,15 +19,15 @@ class LoginPage extends Component {
     this.setState({[event.target.name]: event.target.value});
   }
 
-  submit = (event) => {
-    event.preventDefault();
-  }
-
   onSubmit = (user) => {
     console.log(user);
+    
+    // check with backend then redirect!
+    this.props.history.push('/home');
   }
 
   render() {
+    console.log('props', this.props);
     return (
       <div>
         <AppLogo />
