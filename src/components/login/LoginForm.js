@@ -32,9 +32,9 @@ class LoginForm extends Component {
       <div className="form-signin">
         <AppLogo />
         <TextInput
-          htmlId="username"
-          label="User Name"
-          name="username"
+          htmlId="email"
+          label="Email"
+          name="email"
           onChange={this.onChange}
           required
         />
