@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 

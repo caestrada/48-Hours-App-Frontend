@@ -4,9 +4,10 @@ import Label from './Label';
 
 const TextInput = ({htmlId, name, label, type = 'text', required = false, onChange, placeholder, value, error, children, ...props}) => {
   return (
-    <div style={{marginBottom: 16}}>
+    <div style={{marginBottom: 16}} className="form-group">
       <Label htmlFor={htmlId} label={label} required={required} />
       <input 
+        className="form-control"
         id={htmlId}
         type={type}
         name={name}
