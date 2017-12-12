@@ -56,14 +56,12 @@ PasswordInput.defaultProps = {
  *  Redux store. */
 function mapStateToProps(state, ownProps) {
   const { auth } = state;
-
   return {
     auth,
   }  
 }
 
 function mapDispatchToProps(dispatch) {
-
   return {
     loginUser: user => dispatch(authActions.loginUserThunk(user)),
   }

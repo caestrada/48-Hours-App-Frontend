@@ -7,7 +7,7 @@ import AppLogo from '../common/AppLogo';
 class LoginForm extends Component {
   state = { 
     user: {
-      email: '',
+      username: '',
       password: '',
     },
     errors: {},
@@ -28,13 +28,14 @@ class LoginForm extends Component {
   }
 
   render() {
+    const {} = this.state.user;
     return (
-      <div className="form-signin">
+      <div className="form-signin card">
         <AppLogo />
         <TextInput
-          htmlId="email"
-          label="Email"
-          name="email"
+          htmlId="username"
+          label="Username"
+          name="username"
           onChange={this.onChange}
           required
         />
