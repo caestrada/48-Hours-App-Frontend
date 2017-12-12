@@ -9,8 +9,11 @@ class HomePage extends Component {
     isManager: this.props.isManager,
   }
 
+  viewUser = (user) => {
+    this.props.history.push('/user', user);
+  }
+
   render() {
-    console.log('props', this.props);
     const { isManager, directReport, sessions } = this.props;
     return (
       <div>
@@ -19,7 +22,7 @@ class HomePage extends Component {
         </div>
         <div className="row">
           <div className={`col-xs-${isManager && 8 || 12}`}><Sessions sessions={sessions} /></div>
-          {isManager && <div className={'col-xs-4'}><UserList directReport={directReport} /></div>}
+          {isManager && <div className={'col-xs-4'}><UserList directReport={directReport} viewUser={this.viewUser}/></div>}
         </div>   
       </div>
     );
@@ -28,7 +31,6 @@ class HomePage extends Component {
 
 function mapStateToProps(state, ownProps) {
   const { auth, sessions } = state;
-  console.log('HomePage redux state', state);
   let isManager = (auth.direct_reports !== undefined && auth.direct_reports.length === 0) ? false : true;
   let directReport = isManager ? auth.direct_reports : [];
 
