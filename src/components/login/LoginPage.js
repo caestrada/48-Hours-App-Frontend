@@ -14,21 +14,20 @@ class LoginPage extends Component {
   }
 
   handleChange = (event) => {
-    console.log('e', event.target.value);
-    this.setState({[event.target.name]: event.target.value});
+    const {name, value} = event.target;
+    console.log('e', name, value);
+    this.setState({[name]: value});
   }
 
   onSubmit = (user) => {
     console.log(user);
-    
     // check with backend then redirect!
     this.props.history.push('/home');
   }
 
   render() {
-    console.log('props', this.props);
     return (
-      <div>
+      <div className="login-wrapper">
         <LoginForm onSubmit={this.onSubmit} />
       </div>
     );

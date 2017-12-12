@@ -29,7 +29,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form className="form-signin">
+      <div className="form-signin">
         <AppLogo />
         <TextInput
           htmlId="username"
@@ -47,9 +47,8 @@ class LoginForm extends Component {
           placeholder="Enter password"
           showVisibilityToggle
         />
-
         <input className="btn btn-lg btn-primary btn-block" type="submit" value="Submit" onClick={this.onFormSubmit} />
-      </form>
+      </div>
     );
   }
 }
