@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UltiLogo from '../common/UltiLogo';
-import AppLogo from '../common/AppLogo';
 import Label from '../common/Label';
 import TextInput from "../common/TextInput";
 import PasswordInput from "../common/PasswordInput";
@@ -30,7 +29,6 @@ class LoginPage extends Component {
     console.log('props', this.props);
     return (
       <div>
-        <AppLogo />
         <LoginForm onSubmit={this.onSubmit} />
       </div>
     );

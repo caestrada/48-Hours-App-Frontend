@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
 import PasswordInput from '../common/PasswordInput';
+import AppLogo from '../common/AppLogo';
 
 class LoginForm extends Component {
   state = { 
@@ -28,7 +29,8 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form>
+      <form className="form-signin">
+        <AppLogo />
         <TextInput
           htmlId="username"
           label="User Name"
@@ -46,7 +48,7 @@ class LoginForm extends Component {
           showVisibilityToggle
         />
 
-        <input type="submit" value="Submit" onClick={this.onFormSubmit} />
+        <input className="btn btn-lg btn-primary btn-block" type="submit" value="Submit" onClick={this.onFormSubmit} />
       </form>
     );
   }
