@@ -5,12 +5,11 @@
 
 body{
   font-family: 'Dosis', sans-serif;
-  /*background: #455A64;*/
   background: #546E7A !important;
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 25px;
   text-align: center;
   width: 100vw;

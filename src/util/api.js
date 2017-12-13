@@ -1,8 +1,8 @@
 const api = 'http://...';
 
 // TODO: use axios to retrieve data from DB.
-export const authUser = (user) => {
-    if(user.username === '' && user.password === '') {      
+export const authUser = ({usernanem, password}) => {
+    if(true) {      
       // user.direct_report = [
       //   {
       //     id: 1,
