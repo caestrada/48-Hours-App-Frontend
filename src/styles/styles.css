@@ -3,13 +3,25 @@
   font-family: 'Lato', sans-serif;
 }
 
-body {
+body{
   font-family: 'Dosis', sans-serif;
-  background: #F3904F;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(left, #3B4371, #F3904F);
-  background: -o-linear-gradient(left, #3B4371, #F3904F);
-  background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*background: #455A64;*/
+  background: #546E7A !important;
 }
+
+.footer {
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+  width: 100vw;
+  color: #CFD8DC;
+}
+
+.rc-menu {
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+}
+
 .login-wrapper{
   display: flex;
   flex-direction: column;
@@ -19,14 +31,37 @@ body {
 }
 
 .form-signin {
+  background: #B0BEC5 !important;
   width: 25vw;
-  padding: 15px;
+  padding: 25px;
   margin: 0 auto;
+}
+
+.form-logo {
+  text-align: center;
+  font-size: 6rem;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 20px; 
+  color: white;
+  font-size: 2rem; 
+  background: #396afc;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none
 }
 
 .card {
   background: #fff;
   border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.z1 {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 

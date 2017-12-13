@@ -20,7 +20,7 @@ class LoginForm extends Component {
     this.setState({user});
   }
 
-  onFormSubmit = (event) => {
+  onSubmit = (event) => {
     const {user} = this.state;
     this.props.onSubmit(user);
     this.setState({submitted: true});
@@ -31,7 +31,8 @@ class LoginForm extends Component {
     const {} = this.state.user;
     return (
       <div className="form-signin card">
-        <AppLogo />
+        {/*<AppLogo />*/}
+        <h1 className="form-logo">UNO</h1>
         <TextInput
           htmlId="username"
           label="Username"
@@ -48,7 +49,9 @@ class LoginForm extends Component {
           placeholder="Enter password"
           showVisibilityToggle
         />
-        <input className="btn btn-lg btn-primary btn-block" type="submit" value="Submit" onClick={this.onFormSubmit} />
+        <button 
+          className="z1 form-submit"  
+          onClick={this.onSubmit}>Submit</button>
       </div>
     );
   }

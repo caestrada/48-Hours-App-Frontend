@@ -2,8 +2,7 @@ const api = 'http://...';
 
 // TODO: use axios to retrieve data from DB.
 export const authUser = (user) => {
-    // if(user.email === 'a@a.com' && user.password === '48hours') {
-    if(user.email === '' && user.password === '') {      
+    if(user.username === '' && user.password === '') {      
       // user.direct_report = [
       //   {
       //     id: 1,
@@ -92,8 +91,7 @@ export const authUser = (user) => {
         ]
       };
       return Promise.resolve(userRes);
-    }
-    else {
+    } else {
       return Promise.reject('ERROR: credentials not found! (email: a@a.com, pass: 48hours)');
     }
 }
