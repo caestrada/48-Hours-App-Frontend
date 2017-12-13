@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Sessions = ({sessions}) => {
-  console.log('Sessions', sessions);
   return (
     <div>
       <h1>Sessions</h1>

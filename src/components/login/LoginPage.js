@@ -30,7 +30,6 @@ class LoginPage extends Component {
   onSubmit = (user) => {
     this.props.loginUser(user)
     .then(auth => {
-      console.log('auth', auth);
       this.props.history.push('/home');
     })
     .catch((err) => alert(err));
