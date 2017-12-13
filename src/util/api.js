@@ -9,7 +9,7 @@ const api = axios.create({
 // TODO: use axios to retrieve data from DB.
 export const authUser = (user) => {
     // if(user.email === 'a@a.com' && user.password === '48hours') {
-    if(user.email === '' && user.password === '') {      
+    if(user.username === '' && user.password === '') {      
       const userRes = defaultAuthRes;
       return Promise.resolve(userRes);
     } else {
