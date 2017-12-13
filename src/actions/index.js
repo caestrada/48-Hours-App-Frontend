@@ -30,3 +30,20 @@ export const loadSessionsThunk = (userId) => {
             .catch(err => {throw(err)});
   }
 }
+
+export const CREATE_SESSION = 'CREATE_SESSION';
+export const createSession = (session) => ({
+  type: CREATE_SESSION,
+  session,
+});
+export const createSessionThunk = (newSession) => {
+  console.log('@@@ createSessionThunk');
+  return (dispatch) => {
+    return  api.createSession(newSession)
+            .then(session => {
+              dispatch(createSession(session));
+              return session;
+            })
+            .catch(err => {throw(err)});
+  }
+}

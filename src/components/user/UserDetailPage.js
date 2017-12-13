@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import * as api from '../../util/api';
 import Sessions from '../common/Sessions';
 import TextInput from '../common/TextInput';
+import { connect } from 'react-redux';
+import * as sessionActions from '../../actions';
 
 
 
@@ -41,6 +43,12 @@ const NewSessionForm = ({onChange, newSession, toggleTopic}) => {
           name="custom-topic"
           onChange={onChange}
         />
+        <TextInput
+          htmlId="comment"
+          label="Comment"
+          name="comment"
+          onChange={onChange}
+        />
         <input className="btn btn-lg btn-primary btn-block" type="submit" value="Create Session" onClick={newSession} />
       </form>
     </div>
@@ -54,6 +62,7 @@ class UserDetailPage extends Component {
     newSession: {
       title: '',
       topic: [],
+      comments: [],
     },
   }
   componentDidMount() {
@@ -71,11 +80,9 @@ class UserDetailPage extends Component {
   }
 
   onChange = (event) => {
-    console.log('event', event.target);
     const session = this.state.newSession;
 
     if(event.target.type === 'checkbox' && event.target.checked) {
-      console.log('checkbox!!!!');
       session['topic'].push(event.target.value);
     }
     else if(event.target.type === 'checkbox' && !event.target.checked) {
@@ -84,6 +91,9 @@ class UserDetailPage extends Component {
         session['topic'].splice(index, 1);
       }
     }
+    else if(event.target.name === 'comment') {
+      session.comments[0] = event.target.value;
+    }
     else {
       session[event.target.name] = event.target.value;
     }
@@ -91,14 +101,14 @@ class UserDetailPage extends Component {
   }
 
   newSession = (event) => {
-    console.log('session', this.state.newSession);
+    this.props.createSession(this.state.newSession)
+    .then(res => this.toggleNewSessionForm());
     event.preventDefault();
   }
 
   render() {
     const user = this.props.location.state;
     const {sessions, createSessionForm} = this.state;
-    console.log(this.state);
     return (
       <div>
         <h1>User: {user.fullname}</h1>
@@ -118,4 +128,16 @@ class UserDetailPage extends Component {
   }
 }
 
-export default UserDetailPage;
+function mapStateToProps(state, ownProps) {
+
+  return {}  
+}
+
+function mapDispatchToProps(dispatch) {
+  
+    return {
+      createSession: session => dispatch(sessionActions.createSessionThunk(session)),
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetailPage);
