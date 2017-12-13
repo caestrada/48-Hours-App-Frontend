@@ -1,4 +1,10 @@
-const api = 'http://...';
+import axios from 'axios';
+
+const api = axios.create({
+  baseUrl: 'http://dev.io:4000/api',
+  timeout: 15000,
+  transformResponse: [data => data.data]
+});
 
 // TODO: use axios to retrieve data from DB.
 export const authUser = ({usernanem, password}) => {

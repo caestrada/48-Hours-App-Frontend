@@ -15,10 +15,10 @@ class HomePage extends Component {
   }
 
   render() {
-    const { isManager, directReport, sessions } = this.props;
+    const { auth, isManager, directReport, sessions } = this.props;
     return (
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <DashCard />
+        <DashCard user={auth}/>
         <div className="row">
           <div className={`col-xs-${isManager && 8 || 12}`}><Sessions sessions={sessions} /></div>
           {isManager && <div className={'col-xs-4'}><UserList directReport={directReport} viewUser={this.viewUser}/></div>}

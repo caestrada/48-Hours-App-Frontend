@@ -3,9 +3,10 @@
   font-family: 'Lato', sans-serif;
 }
 
-body{
+body {
   font-family: 'Dosis', sans-serif;
-  background: #546E7A !important;
+  background: #455A64 !important;
+  overflow-x: hidden;
 }
 
 .footer {
