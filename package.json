@@ -5,14 +5,23 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "^3.3.7",
+    "boron": "^0.2.3",
+    "font-awesome": "^4.7.0",
+    "material-ui": "^1.0.0-beta.23",
+    "material-ui-icons": "^1.0.0-beta.17",
     "prop-types": "^15.6.0",
+    "rc-menu": "^6.2.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-tap-event-plugin": "^3.0.2",
+    "react-trend": "^1.2.4",
+    "react-ui": "^0.6.2",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "typeface-roboto": "^0.0.45"
   },
   "scripts": {
     "start": "react-scripts start",

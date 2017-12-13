@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserList from '../common/UserList';
 import Sessions from '../common/Sessions';
+import DashCard from '../common/DashCard';
 
 
 class HomePage extends Component {
@@ -14,12 +15,10 @@ class HomePage extends Component {
   }
 
   render() {
-    const { isManager, directReport, sessions } = this.props;
+    const { auth, isManager, directReport, sessions } = this.props;
     return (
-      <div>
-        <div className="jumbotron">
-          <h1>Home Page</h1>          
-        </div>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <DashCard user={auth}/>
         <div className="row">
           <div className={`col-xs-${isManager && 8 || 12}`}><Sessions sessions={sessions} /></div>
           {isManager && <div className={'col-xs-4'}><UserList directReport={directReport} viewUser={this.viewUser}/></div>}

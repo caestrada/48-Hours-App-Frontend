@@ -3,28 +3,25 @@ import PropTypes from 'prop-types';
 import TextInput from "./TextInput";
 
 class PasswordInput extends React.Component {
-  state = { 
-    showPassword: false,
-  }
+  state = { visibility: false }
 
   toggleShowPassword = event => {
+    event && event.preventDefault();
     this.setState(prevState => {
-      return { showPassword: !prevState.showPassword };
+      return { visibility: !prevState.visibility };
     });
-    
-    if(event) event.preventDefault();
   }
 
   render() {
     const { htmlId, value, label, error, onChange, placeholder, maxLength, showVisibilityToggle, quality, ...props } = this.props;
-    const { showPassword } = this.state;
+    const { visibility } = this.state;
 
     return (
       <TextInput
         htmlId={htmlId}
         label={label}
         placeholder={placeholder}
-        type={showPassword ? 'text' : 'password'}
+        type={visibility && 'text' || 'password'}
         onChange={onChange}
         value={value}
         maxLength={maxLength}
@@ -32,11 +29,10 @@ class PasswordInput extends React.Component {
         required
         {...props}>
         {
-          showVisibilityToggle && <a
-                                    href="#"
+          showVisibilityToggle && <a href="#"
                                     onClick={this.toggleShowPassword}
-                                    style={{marginLeft: 5}}>show
-                                  </a>
+                                    style={{marginLeft: 5}}
+                                    className={`fa fa-eye${visibility && '-slash' || ''}`} ></a>
         }
       </TextInput>
     );

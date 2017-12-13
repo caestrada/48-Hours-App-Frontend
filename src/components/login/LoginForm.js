@@ -7,7 +7,7 @@ import AppLogo from '../common/AppLogo';
 class LoginForm extends Component {
   state = { 
     user: {
-      email: '',
+      username: '',
       password: '',
     },
     errors: {},
@@ -20,7 +20,7 @@ class LoginForm extends Component {
     this.setState({user});
   }
 
-  onFormSubmit = (event) => {
+  onSubmit = (event) => {
     const {user} = this.state;
     this.props.onSubmit(user);
     this.setState({submitted: true});
@@ -28,13 +28,15 @@ class LoginForm extends Component {
   }
 
   render() {
+    const {} = this.state.user;
     return (
-      <div className="form-signin">
-        <AppLogo />
+      <div className="form-signin card">
+        {/*<AppLogo />*/}
+        <h1 className="form-logo">UNO</h1>
         <TextInput
-          htmlId="email"
-          label="Email"
-          name="email"
+          htmlId="username"
+          label="Username"
+          name="username"
           onChange={this.onChange}
           required
         />
@@ -47,7 +49,9 @@ class LoginForm extends Component {
           placeholder="Enter password"
           showVisibilityToggle
         />
-        <input className="btn btn-lg btn-primary btn-block" type="submit" value="Submit" onClick={this.onFormSubmit} />
+        <button 
+          className="z1 form-submit"  
+          onClick={this.onSubmit}>Submit</button>
       </div>
     );
   }

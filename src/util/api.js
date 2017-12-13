@@ -1,4 +1,10 @@
-const api = 'http://...';
+import axios from 'axios';
+
+const api = axios.create({
+  baseUrl: 'http://dev.io:4000/api',
+  timeout: 15000,
+  transformResponse: [data => data.data]
+});
 
 // TODO: use axios to retrieve data from DB.
 export const authUser = (user) => {
@@ -6,8 +12,7 @@ export const authUser = (user) => {
     if(user.email === '' && user.password === '') {      
       const userRes = defaultAuthRes;
       return Promise.resolve(userRes);
-    }
-    else {
+    } else {
       return Promise.reject('ERROR: credentials not found! (email: a@a.com, pass: 48hours)');
     }
 }
